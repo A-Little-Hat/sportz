@@ -106,7 +106,7 @@ body {
 .external-login {
   display: flex;
   gap: 0.5rem;
-  padding-block-end: 1em;
+  /* padding-block-end: 1em; */
 }
 
 .external-login span {
@@ -125,14 +125,15 @@ body {
   padding-inline: 0.3rem;
   padding-block: 1rem;
   height: 3rem;
-  
+
   min-width: 12rem;
   border-radius: 10px;
   border: 1px solid var(--stroke--color);
   transition: all 0.1s ease;
 }
-.text04, .text06{
-    font-size: 1rem;
+.text04,
+.text06 {
+  font-size: 1rem;
 }
 .signingoogle:hover {
   border: 1px solid #a1a1a185;
@@ -145,8 +146,20 @@ body {
   text-align: center;
   color: var(--color--light);
 }
-
+.name-phone {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin-block-end: 1em;
+}
 .full-name-input input,
+.phone input {
+  width: 12rem;
+  border-bottom: 1px solid var(--stroke--color);
+  transition: border-bottom 0.1s ease-in-out;
+}
+.address-input input,
 .email-input input,
 .password-input input {
   width: 100%;
@@ -154,13 +167,9 @@ body {
   border-bottom: 1px solid var(--stroke--color);
   transition: border-bottom 0.1s ease-in-out;
 }
-.full-name-input input:hover {
-  border-bottom: 1px solid #a1a1a185;
-}
-.email-input input:hover {
-  border-bottom: 1px solid #a1a1a185;
-}
-.password-input input:hover {
+
+.input-hover:hover{
+
   border-bottom: 1px solid #a1a1a185;
 }
 
