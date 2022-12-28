@@ -1,0 +1,13 @@
+.hover-image:hover{
+    transform: scale(1.2);
+    opacity: 0.5;
+    
+}
+.hover-image{
+    transition: all 0.3s ease-in-out;
+}
+.visi{
+    opacity: 0;
+}
+
+
