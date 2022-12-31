@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Page</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <!-- CSS -->
+    <link href="./css/product.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="css/tiny-slider.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <meta name="robots" content="noindex,follow" />
+
+</head>
+
+<body>
+
+    <!-- Start Header/Navigation -->
+    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="./images/logo.png" alt="logo"></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
+                aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsFurni">
+                <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="active"><a class="nav-link" href="shop.html">Shop</a></li>
+                    <li><a class="nav-link" href="about.html">About us</a></li>
+                    <li><a class="nav-link" href="services.html">Services</a></li>
+                    <li><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li><a class="nav-link" href="contact.html">Contact us</a></li>
+                </ul>
+
+                <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+                    <li><a class="nav-link" href="./sign-up.html"><img src="images/user.svg"></a></li>
+                    <li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+    <main class="container">
+
+        <!-- Left Column / Headphones Image -->
+        <div class="left-column overflow-hidden d-flex justify-content-center">
+            <img data-image="black" class=" w-50 h-100" src="./images/cricket/bat/PngItem_3336759.png" alt="">
+            <img data-image="blue" class=" w-50 h-100" src="./images/cricket/bat/PngItem_5207631.png" alt="">
+            <img data-image="red" class="active w-50 h-100"  src="./images/cricket/bat/PngItem_1517732.png" alt="">
+        </div>
+
+
+        <!-- Right Column -->
+        <div class="right-column">
+
+            <!-- Product Description -->
+            <div class="product-description">
+                <span>Cricket</span>
+                <h1>Beats EP</h1>
+                <p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation.
+                    Sturdy headband and on-ear cushions suitable for live performance</p>
+            </div>
+
+            <!-- Product Configuration -->
+            <div class="product-configuration">
+
+                <!-- Product Color -->
+                <div class="product-color">
+                    <span>Color</span>
+
+                    <div class="color-choose">
+                        <div>
+                            <input data-image="red" type="radio" id="red" name="color" value="red" checked>
+                            <label for="red"><span></span></label>
+                        </div>
+                        <div>
+                            <input data-image="blue" type="radio" id="blue" name="color" value="blue">
+                            <label for="blue"><span></span></label>
+                        </div>
+                        <div>
+                            <input data-image="black" type="radio" id="black" name="color" value="black">
+                            <label for="black"><span></span></label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Cable Configuration -->
+                <div class="cable-config">
+                    <span>Cable configuration</span>
+
+                    <div class="cable-choose">
+                        <button>Straight</button>
+                        <button>Coiled</button>
+                        <button>Long-coiled</button>
+                    </div>
+
+                    <a href="#">How to configurate your headphones</a>
+                </div>
+            </div>
+
+            <!-- Product Pricing -->
+            <div class="product-price">
+                <span>148$</span>
+                <a href="#" class="cart-btn">Add to cart</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Start Footer Section -->
+	<footer class="footer-section">
+		<div class="container relative">
+
+			<!-- <div class="sofa-img">
+				<img src="images/sofa.png" alt="Image" class="img-fluid">
+			</div> -->
+
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="subscription-form">
+						<h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg"
+									alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
+
+						<form action="#" class="row g-3">
+							<div class="col-auto">
+								<input type="text" class="form-control" placeholder="Enter your name">
+							</div>
+							<div class="col-auto">
+								<input type="email" class="form-control" placeholder="Enter your email">
+							</div>
+							<div class="col-auto">
+								<button class="btn btn-primary">
+									<span class="fa fa-paper-plane"></span>
+								</button>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="row g-5 mb-5">
+				<div class="col-lg-4">
+					<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Furni<span>.</span></a></div>
+					<p class="mb-4">Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus
+						malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
+						Pellentesque habitant</p>
+
+					<ul class="list-unstyled custom-social">
+						<li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+						<li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+						<li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+						<li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+					</ul>
+				</div>
+
+				<div class="col-lg-8">
+					<div class="row links-wrap">
+						<div class="col-6 col-sm-6 col-md-3">
+							<ul class="list-unstyled">
+								<li><a href="#">About us</a></li>
+								<li><a href="#">Services</a></li>
+								<li><a href="#">Blog</a></li>
+								<li><a href="#">Contact us</a></li>
+							</ul>
+						</div>
+
+						<div class="col-6 col-sm-6 col-md-3">
+							<ul class="list-unstyled">
+								<li><a href="#">Support</a></li>
+								<li><a href="#">Knowledge base</a></li>
+								<li><a href="#">Live chat</a></li>
+							</ul>
+						</div>
+
+						<div class="col-6 col-sm-6 col-md-3">
+							<ul class="list-unstyled">
+								<li><a href="#">Jobs</a></li>
+								<li><a href="#">Our team</a></li>
+								<li><a href="#">Leadership</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+							</ul>
+						</div>
+
+						<div class="col-6 col-sm-6 col-md-3">
+							<ul class="list-unstyled">
+								<li><a href="#">Nordic Chair</a></li>
+								<li><a href="#">Kruzo Aero</a></li>
+								<li><a href="#">Ergonomic Chair</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="border-top copyright">
+				<div class="row pt-4">
+					<div class="col-lg-6">
+						<p class="mb-2 text-center text-lg-start">Copyright &copy;
+							<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash;
+							Designed with love by <a href="https://untree.co">Untree.co</a>
+							<!-- License information: https://untree.co/license/ -->
+						</p>
+					</div>
+
+					<div class="col-lg-6 text-center text-lg-end">
+						<ul class="list-unstyled d-inline-flex ms-auto">
+							<li class="me-4"><a href="#">Terms &amp; Conditions</a></li>
+							<li><a href="#">Privacy Policy</a></li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	<!-- End Footer Section -->
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+    <script src="./js/products.js" charset="utf-8"></script>
+</body>
+
+</html>
