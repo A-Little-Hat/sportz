@@ -6,8 +6,28 @@
 .hover-image{
     transition: all 0.3s ease-in-out;
 }
-.visi{
+/* .visi{
     opacity: 0;
+} */
+.hide {
+    display: none;
+  }
+  
+ /* .hide:hover {
+    display: block;
+    color: red;
+  } */
+.myDIV:hover>.hide{
+    display: block;
+    text-align: center;
+    color: red;
+    font-size: 40px;
+   
+    /* opacity: 0.5; */
+    z-index: 100;
+    /* position: relative; */
 }
-
-
+.badminton{
+    width: 550px;
+    height: 350px;
+}
