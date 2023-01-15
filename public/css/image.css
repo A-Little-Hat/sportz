@@ -20,9 +20,9 @@
 .myDIV:hover>.hide{
     display: block;
     text-align: center;
-    color: red;
+    color: rgb(48, 77, 88);
     font-size: 40px;
-   
+    opacity: 0.8;
     /* opacity: 0.5; */
     z-index: 100;
     /* position: relative; */
