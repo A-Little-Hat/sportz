@@ -62,3 +62,18 @@
 .small-ratings i{
   color:#cecece;   
 }
+.search{
+    background-color: white;
+    border-radius: 15px;
+    margin-bottom: 3%;
+    border: 1px solid #cecece;
+}
+.input-search{
+    border: none;
+    width: 90%;
+    padding: 10px;
+    /* font-size: 16px; */
+}
+.input-search:focus{
+    outline: none;
+}
