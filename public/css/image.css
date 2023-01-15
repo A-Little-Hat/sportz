@@ -31,3 +31,34 @@
     width: 550px;
     height: 350px;
 }
+.deal{
+    color: rgb(48, 77, 88);
+    background-color: orange;
+    /* font-size: 20px; */
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 5px;
+    /* margin: 10px; */
+    width: 100px;
+    text-align: center;
+
+}
+.ratings i{
+    
+    color:#cecece;
+    /* font-size:32px; */
+}
+
+.rating-color{
+    color:#fbc634 !important;
+}
+
+.review-count{
+    font-weight:400;
+    margin-bottom:2px;
+    font-size:14px !important;
+}
+
+.small-ratings i{
+  color:#cecece;   
+}
