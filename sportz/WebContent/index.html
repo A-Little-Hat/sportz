@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="author" content="Untree.co" />
+    <link rel="shortcut icon" href="favicon.png" />
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap4" />
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/tiny-slider.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/image.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css"
+      integrity="sha512-giQeaPns4lQTBMRpOOHsYnGw1tGVzbAIHUyHRgn7+6FmiEgGGjaG0T2LZJmAPMzRCl+Cug0ItQ2xDZpTmEc+CQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    
+
+    <title>Sportz</title>
+    <style>
+      .logos {
+        
+        /* width: 10em; */
+        padding: 1em;
+        /* height: 8em; */
+        display: grid;
+        place-items: center;
+      }
+      .brands{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        height: 15vh;
+        background: aliceblue;
+        margin-top: 2em;
+      }
+      html,
+      body {
+        user-select: none;
+      }
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 85vh;
+        object-fit: fill;
+      }
+    </style>
+  
+  </head>
+
+  <body>
+    <!-- Start Header/Navigation -->
+    <nav
+      class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark"
+      arial-label="Furni navigation bar"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="./"
+          ><img src="./images/logo.png" alt="logo"
+        /></a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarsFurni"
+          aria-controls="navbarsFurni"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsFurni">
+          <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="./">Home</a>
+            </li>
+            <li class=""><a class="nav-link" href="./Shop">Shop</a></li>
+           
+            <li><a class="nav-link" href="./Contact">Contact us</a></li>
+			<li id="profile" ><a class="nav-link" href="./Profile">Profile</a></li>
+          </ul>
+
+          <ul style="display: flex; justify-content: center; align-items: center;" class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+            <li>
+              <a id="register" class="nav-link" href="./Register">
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  viewBox="0 0 448 512"
+                >
+                  <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+                  />
+                </svg>
+              </a>
+                <a id="logout" class="nav-link" href="./Logout">
+                <svg
+  
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                width="20"
+                height="20"
+                fill="currentColor"
+              >
+                <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path
+                  d="M160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96C43 32 0 75 0 128V384c0 53 43 96 96 96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H96c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32h64zM504.5 273.4c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22v72H192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32H320v72c0 9.6 5.7 18.2 14.5 22s19 2 26-4.6l144-136z"
+                />
+              </svg>
+                </a>
+                </li>             
+           
+            <li>
+              <a class="nav-link" href="./Cart"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-cart3"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                  /></svg
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Header/Navigation -->
+    
+
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="./images/banneri.png" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/banner2.png" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/banner3.png" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/3852580.png" alt="" />
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+
+<!-- brands -->
+
+<div
+      class="brands"
+    >
+      <div class="logos">
+        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="130"
+        height="130" fill="#00000081">
+          <title>Adidas</title>
+          <path
+            d="M11.936 17.952c0-.644.517-1.16 1.162-1.16.644 0 1.16.516 1.16 1.16a1.157 1.157 0 01-1.16 1.161 1.157 1.157 0 01-1.162-1.16m4.724 0c0-.645.517-1.162 1.161-1.162s1.161.517 1.161 1.161-.517 1.161-1.16 1.161a1.157 1.157 0 01-1.162-1.16m-10.95 0c0-.645.517-1.162 1.161-1.162s1.16.517 1.16 1.161-.516 1.161-1.16 1.161a1.157 1.157 0 01-1.161-1.16m-4.724 0c0-.645.517-1.162 1.161-1.162s1.161.517 1.161 1.161a1.157 1.157 0 01-1.161 1.161 1.157 1.157 0 01-1.16-1.16m9.55-2.052h-1.01v4.063h1.01v-4.063zM3.3 19.964h1.01v-4.063H3.3v.326a2.087 2.087 0 00-1.2-.374c-1.162 0-2.1.938-2.1 2.1 0 1.168.938 2.099 2.1 2.099.445 0 .858-.135 1.2-.374v.286zm15.674 0h1.01v-4.063h-1.01v.326a2.087 2.087 0 00-1.2-.374c-1.162 0-2.1.938-2.1 2.1a2.092 2.092 0 002.1 2.099c.445 0 .858-.135 1.2-.374v.286zm1.384-1.32c.032.82.732 1.4 1.9 1.4.955 0 1.742-.414 1.742-1.328 0-.636-.358-1.01-1.185-1.17l-.644-.126c-.414-.08-.7-.16-.7-.406 0-.27.278-.39.628-.39.51 0 .716.255.732.557h1.018c-.056-.795-.692-1.328-1.718-1.328-1.057 0-1.686.58-1.686 1.336 0 .922.748 1.073 1.392 1.193l.533.095c.382.072.549.183.549.406 0 .199-.191.397-.645.397-.66 0-.874-.342-.882-.636h-1.034zM8.024 14.517v1.71a2.087 2.087 0 00-1.2-.374c-1.162 0-2.1.938-2.1 2.1 0 1.168.938 2.099 2.1 2.099.444 0 .858-.135 1.2-.374v.286h1.01v-5.447h-1.01zm6.226 0v1.71a2.087 2.087 0 00-1.2-.374c-1.161 0-2.1.938-2.1 2.1a2.092 2.092 0 002.1 2.099c.445 0 .858-.135 1.2-.374v.286h1.01v-5.447h-1.01zm-11.626-1.2l.684 1.2h4.716l-1.869-3.229-3.53 2.028zm7.913 2.21v-1.01h3.713l-3.96-6.855L6.751 9.69l2.776 4.827v1.01h1.01zm5.217-1.01h4.723L14.37 3.948l-3.531 2.036 4.915 8.533z"
+          />
+        </svg>
+      </div>
+      <div class="logos">
+        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="200"
+        height="200" fill="#00000081">
+          <title>Nike</title>
+          <path
+            d="M24 7.8L6.442 15.276c-1.456.616-2.679.925-3.668.925-1.12 0-1.933-.392-2.437-1.177-.317-.504-.41-1.143-.28-1.918.13-.775.476-1.6 1.036-2.478.467-.71 1.232-1.643 2.297-2.8a6.122 6.122 0 00-.784 1.848c-.28 1.195-.028 2.072.756 2.632.373.261.886.392 1.54.392.522 0 1.11-.084 1.764-.252L24 7.8z"
+          />
+        </svg>
+      </div>
+      <div class="logos">
+        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="120"
+        height="120" fill="#00000081">
+          <title>Puma</title>
+          <path
+            d="M23.845 3.008c-.417-.533-1.146-.106-1.467.08-2.284 1.346-2.621 3.716-3.417 5.077-.626 1.09-1.652 1.89-2.58 1.952-.686.049-1.43-.084-2.168-.405-1.807-.781-2.78-1.792-3.017-1.97-.487-.37-4.23-4.015-7.28-4.164 0 0-.372-.75-.465-.763-.222-.025-.45.451-.616.501-.15.053-.413-.512-.565-.487-.153.02-.302.586-.6.877-.22.213-.486.2-.637.463-.052.096-.034.265-.093.42-.127.32-.551.354-.555.697 0 .381.357.454.669.72.248.212.265.362.554.461.258.088.632-.187.964-.088.277.081.543.14.602.423.054.256 0 .658-.34.613-.112-.015-.598-.174-1.198-.11-.725.077-1.553.309-1.634 1.11-.041.447.514.97 1.055.866.371-.071.196-.506.399-.716.267-.27 1.772.944 3.172.944.593 0 1.031-.15 1.467-.605.04-.029.093-.102.155-.11a.632.632 0 01.195.088c1.131.897 1.984 2.7 6.13 2.721.582.007 1.25.279 1.796.777.48.433.764 1.125 1.037 1.825.418 1.053 1.161 2.069 2.292 3.203.06.068.99.78 1.06.833.012.01.084.167.053.255-.02.69-.123 2.67 1.365 2.753.366.02.275-.231.275-.41-.005-.341-.065-.685.113-1.04.253-.478-.526-.709-.509-1.756.019-.784-.645-.651-.984-1.25-.19-.343-.368-.532-.35-.946.073-2.38-.517-3.948-.805-4.327-.227-.294-.423-.403-.207-.54 1.24-.815 1.525-1.574 1.525-1.574.66-1.541 1.256-2.945 2.075-3.57.166-.12.589-.44.852-.56.763-.362 1.173-.578 1.388-.788.356-.337.635-1.053.294-1.48z"
+          />
+        </svg>
+      </div>
+      <div class="logos">
+        <svg
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          width="200"
+          height="200" fill="#00000081"
+        >
+          <title>Reebok</title>
+          <path
+            d="M14.991 11.48C17.744 10.38 19.458 9.748 24 8.64c-2.467.163-7.922.537-11.682 1.271l2.673 1.57m-8.56 3.651h3.6c.713-1.08 1.422-1.606 2.248-2.191a71.382 71.382 0 00-1.892-.701c-2.297 1.014-3.575 2.375-3.953 2.892m.709-3.928c-3.21 1.147-4.994 2.393-6.199 3.928h3.975c.387-.539 1.862-2.093 4.633-3.174a57.092 57.092 0 00-2.41-.754M8.79 8.788H0c8.862 1.6 13.133 3.66 20 6.572-.587-.439-10.051-6.013-11.209-6.572"
+          />
+        </svg>
+      </div>
+    </div>
+
+    <div style="padding: 4em 0 2em 0" class="">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h2
+              style="
+                font-size: 2.5rem;
+                font-weight: 900;
+                font-family: 'Manrope', sans-serif;
+              "
+              class="section-title"
+            >
+              Try Sportz.
+            </h2>
+            <p>
+              Taking the time to truly understand our customer's needs and then
+              making sure they consistently get that is what makes us different.
+            </p>
+
+            <div class="row my-5">
+              <div class="col-6 col-md-6">
+                <div class="feature">
+                  <div class="icon">
+                    <?xml version="1.0" encoding="iso-8859-1"?>
+                    <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) -->
+                    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                    <svg
+                      version="1.1"
+                      id="Capa_1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      x="0px"
+                      y="0px"
+                      width="50"
+                      height="50"
+                      viewBox="0 0 116.44 116.44"
+                      style="enable-background: new 0 0 116.44 116.44"
+                      xml:space="preserve"
+                    >
+                      <g>
+                        <g>
+                          <path
+                            d="M14.328,85.872c-2.153-2.347-5.419-2.83-7.297-1.071c-1.875,1.756-3.401,3.177-3.401,3.177s-8.787,8.191,3.987,22.585 c5.071,5.721,11.126,6.284,15.423,5.693c3.154-0.431,7.039-2.885,8.9-4.519c1.861-1.626,1.623-4.854-0.526-7.201L14.328,85.872z"
+                          />
+                          <path
+                            d="M113.417,64.095c-2.315-2.696-5.888-2.707-8.226-2.349c-0.425,0.065-0.854-0.092-1.141-0.413 c-0.285-0.324-0.386-0.771-0.27-1.185c0.812-2.877,0.15-6.082-2.048-8.413c-1.978-2.093-4.729-2.982-7.382-2.677 c-0.541,0.063-1.079-0.134-1.453-0.528s-0.538-0.943-0.449-1.48c0.454-2.63-0.276-5.427-2.256-7.52 c-2.177-2.293-5.274-3.15-8.15-2.564c-0.42,0.085-0.849-0.049-1.139-0.36c-0.292-0.308-0.405-0.745-0.296-1.157 c0.748-2.842,0.068-5.989-2.102-8.282c-1.77-1.875-4.165-2.786-6.553-2.735c-0.685,0.014-1.342-0.261-1.813-0.757 c-0.471-0.498-0.712-1.17-0.657-1.853c0.185-2.381-0.591-4.823-2.363-6.701c-2.042-2.164-4.913-3.046-7.646-2.652 c-0.523,0.076-1.049-0.107-1.411-0.49c-0.362-0.383-0.517-0.92-0.412-1.436c0.55-2.708-0.17-5.623-2.214-7.785 c-3.354-3.539-8.941-3.693-12.487-0.346c-1.362,1.287-2.212,2.907-2.567,4.61c-0.196,0.16-14.288,55.669-14.288,55.669 c-0.769,3.091-3.272,7.363-5.599,9.539l-0.218,0.203c-2.327,2.177-2.466,5.845-0.314,8.2l17.249,18.831 c2.152,2.345,5.837,2.543,8.229,0.439l1.932-1.694c2.392-2.099,6.825-4.489,9.892-5.336l50.708-13.969 c2.049-0.609,3.637-0.956,5.085-2.329C116.604,73.23,116.585,67.793,113.417,64.095z M39.688,69.392 c-0.488,1.446-1.836,2.356-3.279,2.356c-0.367,0-0.738-0.06-1.107-0.183c-1.812-0.611-2.784-2.573-2.175-4.387l10.575-31.339 c0.611-1.81,2.569-2.786,4.387-2.174c1.81,0.611,2.784,2.577,2.171,4.387L39.688,69.392z M47.078,67.145l23.455-22.687 c1.374-1.33,3.565-1.294,4.897,0.081c1.326,1.374,1.294,3.566-0.082,4.894L51.892,72.12c-0.673,0.646-1.542,0.972-2.405,0.972 c-0.904,0-1.809-0.354-2.489-1.054C45.667,70.665,45.705,68.471,47.078,67.145z M82.705,75.293L51.317,85.731 c-0.361,0.118-0.731,0.173-1.09,0.173c-1.453,0-2.803-0.917-3.285-2.367c-0.602-1.813,0.378-3.775,2.193-4.38l31.386-10.434 c1.82-0.603,3.772,0.381,4.377,2.189C85.5,72.731,84.518,74.693,82.705,75.293z"
+                          />
+                        </g>
+                      </g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                      <g></g>
+                    </svg>
+                  </div>
+                  <p>Badminton &and; Tennis</p>
+                  <!-- <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p> -->
+                </div>
+              </div>
+
+              <div class="col-6 col-md-6">
+                <div class="feature">
+                  <div class="icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                      width="50"
+                      height="50"
+                    >
+                      <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                      <path
+                        d="M177.1 228.6L207.9 320h96.5l29.62-91.38L256 172.1L177.1 228.6zM255.1 0C114.6 0 .0001 114.6 .0001 256S114.6 512 256 512s255.1-114.6 255.1-255.1S397.4 0 255.1 0zM435.2 361.1l-103.9-1.578l-30.67 99.52C286.2 462.2 271.3 464 256 464s-30.19-1.773-44.56-4.93L180.8 359.6L76.83 361.1c-14.93-25.35-24.79-54.01-27.8-84.72L134.3 216.4L100.7 118.1c19.85-22.34 44.32-40.45 72.04-52.62L256 128l83.29-62.47c27.72 12.17 52.19 30.27 72.04 52.62L377.7 216.4l85.23 59.97C459.1 307.1 450.1 335.8 435.2 361.1z"
+                      />
+                    </svg>
+                  </div>
+                  <p>Football</p>
+                  <!-- <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p> -->
+                </div>
+              </div>
+
+              <div class="col-6 col-md-6">
+                <div class="feature">
+                  <div class="icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 640 512"
+                      width="50"
+                      height="50"
+                    >
+                      <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                      <path
+                        d="M550.3 0c-10.9 0-21.4 3.4-30.2 9.8L279.7 184.6c-13.9 10.1-26.8 21.4-38.7 33.8L138.7 325.3c-9.2 9.6-19.3 18.4-30.1 26.3L79.3 372.9c1.3 1.5 2.6 3 3.9 4.7l48 64c1.6 2.2 3.1 4.4 4.4 6.6l27.3-19.9c11.6-8.4 24-15.8 37-21.8l135.3-63.1c16.7-7.8 32.7-17.2 47.6-28.1L619 143.6c13.2-9.6 21-24.9 21-41.2c0-11-3.6-21.8-10.2-30.6L609.6 44.8 591.4 20.6C581.7 7.6 566.5 0 550.3 0zM496 512c44.2 0 80-35.8 80-80s-35.8-80-80-80s-80 35.8-80 80s35.8 80 80 80zM57.6 396.8c-10.6-14.1-30.7-17-44.8-6.4s-17 30.7-6.4 44.8l48 64c10.6 14.1 30.7 17 44.8 6.4s17-30.7 6.4-44.8l-48-64z"
+                      />
+                    </svg>
+                  </div>
+                  <p>Baseball &and; Cricket</p>
+                  <!-- <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p> -->
+                </div>
+              </div>
+
+              <div class="col-6 col-md-6">
+                <div class="feature">
+                  <div class="icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width="50"
+                      height="50"
+                    >
+                      <path
+                        d="M20.49,3.51c-0.56-0.56-2.15-0.97-4.16-0.97c-3.08,0-7.15,0.96-9.98,3.79C1.66,11.03,2.1,19.07,3.51,20.49 c0.56,0.56,2.15,0.97,4.16,0.97c3.08,0,7.15-0.96,9.98-3.79C22.34,12.97,21.9,4.93,20.49,3.51z M7.76,7.76 c2.64-2.64,6.35-3.12,8.03-3.19c-2.05,0.94-4.46,2.45-6.61,4.61c-2.16,2.16-3.67,4.58-4.62,6.63C4.66,13.33,5.44,10.07,7.76,7.76z M16.24,16.24c-2.64,2.64-6.35,3.12-8.03,3.19c2.05-0.94,4.46-2.45,6.61-4.61c2.16-2.16,3.67-4.58,4.62-6.63 C19.34,10.67,18.56,13.93,16.24,16.24z"
+                      />
+                    </svg>
+                  </div>
+                  <p>Rugby</p>
+                  <!-- <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="height: 32em; width: 49.666667%" class="col-lg-5">
+            <div class="img-wrap">
+              <img src="images/landImg.png" alt="Image" class="img-fluid" />
+            </div>
+          </div>
+          <br /><br />
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; padding-block: 1.5em" class="">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 col-md-6 col-lg-3 mb-4">
+            <div class="feature">
+              <div class="icon">
+                <img src="images/truck.svg" alt="Image" class="imf-fluid" />
+              </div>
+              <h3>Fast &amp; Free Shipping</h3>
+              <!-- <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p> -->
+            </div>
+          </div>
+
+          <div class="col-6 col-md-6 col-lg-3 mb-4">
+            <div class="feature">
+              <div class="icon">
+                <img src="images/bag.svg" alt="Image" class="imf-fluid" />
+              </div>
+              <h3>Easy to Shop</h3>
+              <!-- <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p> -->
+            </div>
+          </div>
+
+          <div class="col-6 col-md-6 col-lg-3 mb-4">
+            <div class="feature">
+              <div class="icon">
+                <img src="images/support.svg" alt="Image" class="imf-fluid" />
+              </div>
+              <h3>24/7 Support</h3>
+              <!-- <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p> -->
+            </div>
+          </div>
+
+          <div class="col-6 col-md-6 col-lg-3 mb-4">
+            <div class="feature">
+              <div class="icon">
+                <img src="images/return.svg" alt="Image" class="imf-fluid" />
+              </div>
+              <h3>Hassle Free Returns</h3>
+              <!-- <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p> -->
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+    <!-- Carousel wrapper -->
+    <div
+      id="carouselVideoExample"
+      class="carousel slide carousel-fade"
+      data-mdb-ride="carousel"
+    >
+      <!-- Indicators -->
+    
+
+      <!-- Inner -->
+      <div class="carousel-inner">
+        <!-- Single item -->
+        <div class="carousel-item active">
+          <video class="w-100"  autoplay loop muted>
+            <!-- video to be changed -->
+            <source
+              src="https://firebasestorage.googleapis.com/v0/b/sportz-caluniv.appspot.com/o/Video%2FNike_Be_your_Inspiration_Spec_Ads_Compilation_2020_4K_mFG6WbiQovc.mp4?alt=media&token=17f566b2-101e-42b8-a6eb-1e4211a8a20f"
+              type="video/mp4"
+            />
+          </video>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Some glimes.</h5>
+            <p>
+              “I just knew if it could be done, it had to be done, and I did
+              it.” —Gertrude Ederle.
+            </p>
+          </div>
+        </div>
+    </div>
+    <!-- Carousel wrapper -->
+    <footer
+      style="padding-top: 3em; padding-bottom: 0; font-family: poppins"
+      class="footer-section"
+    >
+      <div class="container relative">
+        <div class="sofa-img">
+          <!-- <img src="images/imagefooter.png" class="img-fluid" alt="" /> -->
+        </div>
+
+        <div class="row">
+          <div style="margin-bottom: -4em" class="col-lg-8">
+            <div class="subscription-form">
+              <h3 class="d-flex align-items-center">
+                <span class="me-1" style="padding-inline: 0.25em"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                    width="25"
+                    height="25"
+                  >
+                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path
+                      d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"
+                    /></svg></span
+                ><span>Subscribe to Newsletter</span>
+              </h3>
+
+              <form action="#" class="row g-3">
+                <div class="col-auto">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter your name"
+                  />
+                </div>
+                <div class="col-auto">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Enter your email"
+                  />
+                </div>
+                <div class="col-auto">
+                  <button class="btn btn-primary">
+                    <span class="fa fa-paper-plane"></span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <hr style="width: 1005" />
+        <div style="padding-top: 0" class="row g-5">
+          <div class="col-lg-4">
+            <div class="mb-4 footer-logo-wrap">
+              <a href="#" style="font-weight: 900" class="footer-logo"
+                ><span style="padding-inline: 0.25em"
+                  ><svg
+                    id="changeColor"
+                    fill="#DC7633"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="30"
+                    zoomAndPan="magnify"
+                    viewBox="0 0 375 374.9999"
+                    height="30"
+                    preserveAspectRatio="xMidYMid meet"
+                    version="1.0"
+                  >
+                    <defs>
+                      <path
+                        id="pathAttribute"
+                        d="M 8.238281 8.238281 L 366.738281 8.238281 L 366.738281 366.738281 L 8.238281 366.738281 Z M 8.238281 8.238281 "
+                        fill="orange"
+                      ></path>
+                    </defs>
+                    <g>
+                      <path
+                        id="pathAttribute"
+                        d="M 187.488281 8.238281 L 204.875 22.945312 L 224.960938 12.152344 L 238.894531 30.136719 L 260.796875 23.734375 L 270.664062 44.203125 L 293.425781 42.46875 L 298.800781 64.535156 L 321.429688 67.542969 L 322.074219 90.238281 L 343.578125 97.863281 L 339.464844 120.191406 L 358.902344 132.09375 L 350.210938 153.085938 L 366.738281 168.75 L 353.84375 187.488281 L 366.738281 206.222656 L 350.210938 221.886719 L 358.902344 242.878906 L 339.464844 254.78125 L 343.578125 277.113281 L 322.074219 284.734375 L 321.429688 307.429688 L 298.800781 310.4375 L 293.425781 332.503906 L 270.664062 330.769531 L 260.796875 351.238281 L 238.894531 344.835938 L 224.960938 362.820312 L 204.875 352.027344 L 187.488281 366.738281 L 170.097656 352.027344 L 150.011719 362.820312 L 136.078125 344.835938 L 114.175781 351.238281 L 104.308594 330.769531 L 81.546875 332.503906 L 76.171875 310.4375 L 53.542969 307.429688 L 52.898438 284.734375 L 31.394531 277.113281 L 35.511719 254.78125 L 16.070312 242.878906 L 24.761719 221.886719 L 8.238281 206.222656 L 21.128906 187.488281 L 8.238281 168.75 L 24.761719 153.085938 L 16.070312 132.09375 L 35.511719 120.191406 L 31.394531 97.863281 L 52.898438 90.238281 L 53.542969 67.542969 L 76.171875 64.535156 L 81.546875 42.46875 L 104.308594 44.203125 L 114.175781 23.734375 L 136.078125 30.136719 L 150.011719 12.152344 L 170.097656 22.945312 L 187.488281 8.238281 "
+                        fill-opacity="1"
+                        fill-rule="nonzero"
+                        fill="orange"
+                      ></path>
+                    </g>
+                    <g id="inner-icon" transform="translate(85, 75)">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-clubs"
+                        width="199.8"
+                        height="199.8"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        id="IconChangeColor"
+                      >
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                          id="mainIconPathAttribute"
+                        ></path>
+                        <path
+                          d="M12 3a4 4 0 0 1 3.164 6.447a4 4 0 1 1 -1.164 6.198v1.355l1 4h-6l1 -4l.001 -1.355a4 4 0 1 1 -1.164 -6.199a4 4 0 0 1 3.163 -6.446z"
+                          id="mainIconPathAttribute"
+                        ></path>
+                      </svg>
+                    </g></svg></span
+                >Sportz<span>.</span></a
+              >
+            </div>
+            <p class="mb-4">
+              Online platform that specializes in selling sports-related
+              products such as athletic clothing, shoes, equipment, and
+              accessories. Customers can browse and purchase products on the
+            </p>
+
+            <ul class="list-unstyled custom-social">
+              <li>
+                <a href="#"><span class="fa fa-brands fa-facebook-f"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="fa fa-brands fa-twitter"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="fa fa-brands fa-instagram"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="fa fa-brands fa-linkedin"></span></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="row links-wrap">
+              <div class="col-6 col-sm-6 col-md-4 justify-content-center">
+                <ul class="list-unstyled">
+                  <li><a href="#">Report</a></li>
+                  <li><a href="./Shop">shop</a></li>
+                  <li><a href="#">Features</a></li>
+                  <li><a href="#">Contact us</a></li>
+                </ul>
+              </div>
+
+              <div class="col-6 col-sm-6 col-md-4 justify-content-center">
+                <ul class="list-unstyled">
+                  <li><a href="#">Support</a></li>
+                  <li><a href="#">Knowledge base</a></li>
+                  <li><a href="#">Live chat</a></li>
+                </ul>
+              </div>
+
+              <div class="col-6 col-sm-6 col-md-4 justify-content-center">
+                <ul class="list-unstyled">
+                  <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="18" height="18"><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>&nbsp;&nbsp;Techmology campus</a></li>
+                  <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="18" height="18"><path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/></svg>&nbsp;&nbsp;sportz@tutonota.com</a></li>
+                  <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="18" height="18"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>&nbsp;&nbsp;+91 544-856-986</a></li>
+                  <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="18" height="18"><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zM432 248a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg></a>&nbsp;&nbsp;+91 659-892-952</li>
+                </ul>
+              </div>
+
+              <!-- <div class="col-6 col-sm-6 col-md-3">
+							<ul class="list-unstyled">
+								<li><a href="#">Nordic Chair</a></li>
+								<li><a href="#">Kruzo Aero</a></li>
+								<li><a href="#">Ergonomic Chair</a></li>
+							</ul>
+						</div> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="border-top copyright">
+          <div class="row pt-4">
+            <div class="col-lg-6">
+              <p class="mb-2 text-center text-lg-start">
+                Copyright &copy;
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                | Sportz. All Rights Reserved. &mdash;
+                <!-- License information: https://untree.co/license/ -->
+              </p>
+            </div>
+
+            <div class="col-lg-6 text-center text-lg-end">
+              <ul class="list-unstyled d-inline-flex ms-auto">
+                <li class="me-4"><a href="#">Terms &amp; Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+    <script src="./js/userIcon.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+      const logout = document.getElementById("logout")
+const register = document.getElementById("register")
+function getCookie(cname) {
+    let name = cname + "=";
+    let ca = document.cookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+        }
+}
+return "";
+}
+(function checkCookie() {
+let username = getCookie("email");
+if (username != "") {
+// alert("welcome")
+// logout.style.fill = 'red'
+
+logout.style.display="block"
+register.style.display="none"
+} else {
+  logout.style.display="block"
+  const register = document.getElementById("register")
+  register.style.display="none"
+  console.log( document.getElementById("logout"));
+
+  // alert("not logged in")
+}
+})()
+    </script>
+  </body>
+</html>

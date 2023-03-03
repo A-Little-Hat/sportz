@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://fonts>Indiaapis.com/css?family=Montserrat:300,600" />
+  <link rel="stylesheet" href="./css/adminDashboard.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.selectric/1.10.1/selectric.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <title>Admin</title>
+</head>
+
+<body>
+
+  <header style="background-color: #1b2431; height: 8vh;" class="sticky-top text-center">
+    <h1 style="margin: 0; padding: 0;"><a id="Dashboard" class=" col-sm-3 col-md-2 mr-0 " href="#"><img
+          src="./images/logo.png" alt=""><span class="sr-only">(current)</span>
+      </a></h1>
+  </header>
+
+  <nav class="navbar navbar-dark  flex-md-nowrap">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">DASHBOARD</a>
+    <input class="search form-control-dark" type="text" placeholder="Search here" aria-label="Search">
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="link" href="./AdminLogout">Sign out</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2 d-none d-md-block sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <!-- <li class="nav-item">
+                <a id="Dashboard" class="nav-link  active" href="#">
+                      <i class="zmdi zmdi-widgets"></i>
+                      Dashboard <span class="sr-only">(current)</span>
+                    </a>
+              </li> -->
+            <li class="nav-item">
+              <a id="Orders" class="nav-link  active" href="#">
+                <i class="zmdi zmdi-file-text"></i>
+                Orders
+              </a>
+            </li>
+            <li class="nav-item">
+              <a id="Products" class="nav-link " href="#">
+                <i class="zmdi zmdi-shopping-cart"></i>
+                Products
+              </a>
+            </li>
+            <li class="nav-item">
+              <a id="Customers" class="nav-link " href="#">
+                <i class="zmdi zmdi-accounts"></i>
+                Customers
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a id="Insert" class="nav-link " href="#">
+                <i class="zmdi zmdi-layers"></i>
+                Insert Products
+              </a>
+            </li>
+          </ul>
+
+
+        </div>
+      </nav>
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 my-3">
+        <div class="card-list">
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+              <div class="card blue">
+                <div class="title">Total Orders</div>
+                <i class="zmdi zmdi-upload"></i>
+                <div id="total-orders-count" class="value">89</div>
+                <div class="stat"><b>13</b>% increase</div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+              <div class="card green">
+                <div class="title">Total Products</div>
+                <i class="zmdi zmdi-upload"></i>
+                <div  id="total-products-count" class="value">5,990</div>
+                <div class="stat"><b>4</b>% increase</div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+              <div class="card orange">
+                <div class="title">Total customers</div>
+                <i class="zmdi zmdi-download"></i>
+                <div  id="total-customers-count" class="value">₹80,990</div>
+                <div class="stat"><b>13</b>% decrease</div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+              <div class="card red">
+                <div class="title">new customers</div>
+                <i class="zmdi zmdi-download"></i>
+                <div class="value">3</div>
+                <div class="stat"><b>13</b>% decrease</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="projects mb-4">
+          <div class="projects-inner">
+            <header class="projects-header">
+              <div class="title">Current Stats</div>
+              <!-- <div class="count">| 32 Rows</div> -->
+              <i class="zmdi zmdi-download"></i>
+            </header>
+            <section id="customer-table">
+            <table class="projects-table">
+              <tbody id="user-tbody">
+                <!-- <thead>
+                  <tr>
+                    <th>Customer name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tr>
+                  <td class="member">
+                    <figure><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/people_8.png" /></figure>
+                    <div class="member-info">
+                      <p>Name</p>
+                      <p>India</p>
+                    </div>
+                  </td>
+                  <td>
+                    <p>Prime@123.com</p>
+                  </td>
+                  <td>
+                    <p class="text-ok">98474080</p>
+                  </td>
+                  <td>
+                    <p>sakher bazar</p>
+
+                  </td>
+                  <td class="status">
+                    <span class="status-text status-green">Active user</span>
+                  </td>
+                </tr>  -->
+              </tbody>
+          </table>
+            </section>
+              <section id="insert" >
+                <form id="insert-product-form" action="AddProduct" method="post" class="cont">
+                  <div class="insert">
+                    <div class="left">
+        
+                      <div class="pname">
+                        <label for="">Product name</label>
+                        <input required id="pname" name="pname" placeholder="Enter product name" type="text">
+                      </div>
+        
+                      <div class="url">
+                        <label for="">Image URL</label>
+                        <input required id="purl" name="purl" placeholder="Enter product url" type="text">
+                      </div>
+        
+                      <div class="price">
+                        <label for="">Price</label>
+                        <input required id="pprice" name="pprice" placeholder="Enter product price" type="text">
+                      </div>
+                      
+                       <div class="pcount">
+                        <label for="">Product Count</label>
+                        <input required id="pcount" name="pcount" placeholder="Enter product count" type="text">
+                      </div>
+                    </div>
+                    <div class="right">
+                      <div class="category">
+                        <label for="category">Choose a category:</label>
+                        <select required id="category" name="category">
+                          <option name="cricket" value="cricket" selected>Cricket</option>
+                          <option name="football" value="football">Football</option>
+                          <option name="Badminton" value="badminton">Badminton</option>
+                          <option name="rugby" value="rugby" >Rugby</option>
+                        </select>
+                      </div>
+                      <div class="pdesc">
+                        <label for="">Production Description</label>
+                        <textarea required id="pdesc" name="pdesc" placeholder="Enter product desc:" id="" cols="10" rows="5"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <button id="submitBTN">SUBMIT</button>
+                </form>
+              </section>
+             
+            <section id="order-table" >
+              <table  class="projects-table">
+                <tbody  id="order-tbody">
+                  <!-- <thead>
+                    <tr>
+                      <th>Order ID</th>
+                      <th>Customer Email</th>
+                      <th>Phone</th>
+                      <th>Address</th>
+                      <th>Order Date</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td class="member">
+                      <figure><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/people_8.png" /></figure>
+                      <div class="member-info">
+                        <p>Name</p>
+                        <p>India</p>
+                      </div>
+                    </td>
+                    <td>
+                      <p>Prime@123.com</p>
+                    </td>
+                    <td>
+                      <p class="text-ok">98474080</p>
+                    </td>
+                    <td>
+                      <p>sakher bazar</p>
+  
+                    </td>
+                    <td class="status">
+                      <span class="status-text status-green">Active user</span>
+                    </td>
+                  </tr> -->
+                </tbody>
+            </table>
+              </section>
+              <!--Products  -->
+              <!-- <section>
+              <table>
+                <tbody id="tbody">
+                <thead>
+                  <tr>
+                    <th>Product Name</th>
+                    <th>Product ID</th>
+                    <th>Product Desc</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                  </tr>
+                </thead>
+                <tr>
+                  <td class="member">
+                    <figure><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/people_8.png" /></figure>
+                    <div class="member-info">
+                      <p>Name</p>
+                      <p>India</p>
+                    </div>
+                  </td>
+                  <td>
+                    <p>Prime@123.com</p>
+                  </td>
+                  <td>
+                    <p class="text-ok">98474080</p>
+                  </td>
+                  <td>
+                    <p>sakher bazar</p>
+
+                  </td>
+                  <td class="status">
+                    <span class="status-text status-green">Active user</span>
+                  </td>
+                </tr>
+              </tbody>
+
+            </section> -->
+            <section id="product-table">
+              <table class="projects-table">
+                <tbody id="product-tbody">
+                  <!-- <thead>
+                    <tr>
+                      <th>Product Name</th>
+                      <th>Product ID</th>
+                      <th>Product Desc</th>
+                      <th>Category</th>
+                      <th>Quantity</th>
+                    </tr>
+                  </thead> -->
+                  <!-- <tr>
+                    <td class="member">
+                      <figure><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/people_8.png" /></figure>
+                      <div class="member-info">
+                        <p>Name</p>
+                        <p>India</p>
+                      </div>
+                    </td>
+                    <td>
+                      <p>Prime@123.com</p>
+                    </td>
+                    <td>
+                      <p class="text-ok">98474080</p>
+                    </td>
+                    <td>
+                      <p>sakher bazar</p>
+  
+                    </td>
+                    <td class="status">
+                      <span class="status-text status-green">Active user</span>
+                    </td>
+                  </tr> -->
+                </tbody>
+            </table>
+              </section>
+            </table>
+          </div>
+        </div>
+      </main>
+
+      
+    </div>
+  </div>
+
+  <script src="./js/adminDashboard.js"></script>
+  
+</body>
+
+</html>

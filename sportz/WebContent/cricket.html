@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="author" content="Untree.co" />
+    <link rel="shortcut icon" href="favicon.png" />
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap4" />
+
+    <!-- Bootstrap CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="./css/tiny-slider.css" rel="stylesheet" />
+    <link href="./css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/card.css" />
+    <title>Sportz-Cricket</title>
+   
+  </head>
+
+  <body>
+    <!-- Start Header/Navigation -->
+    <nav
+      class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark"
+      arial-label="Furni navigation bar"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="./"
+          ><img src="./images/logo.png" alt="logo"
+        /></a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarsFurni"
+          aria-controls="navbarsFurni"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsFurni">
+          <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link" href="./">Home</a>
+            </li>
+            <li ><a class="nav-link" href="./Shop">Shop</a></li>
+            <!-- <li><a class="nav-link" href="about.html">About us</a></li> -->
+            <!-- <li><a class="nav-link" href="services.html">Services</a></li> -->
+            <!-- <li><a class="nav-link" href="blog.html">Blog</a></li> -->
+            <li><a class="nav-link" href="./Contact">Contact us</a></li>
+<li id="profile" ><a class="nav-link" href="./Profile">Profile</a></li>
+          </ul>
+
+          <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+            <li>
+              <a id="register" class="nav-link" href="./Register">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  viewBox="0 0 448 512"
+                >
+                  <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+                  />
+                </svg>
+              </a>
+              <a id="logout" class="nav-link" href="./Logout">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                >
+                  <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96C43 32 0 75 0 128V384c0 53 43 96 96 96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H96c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32h64zM504.5 273.4c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22v72H192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32H320v72c0 9.6 5.7 18.2 14.5 22s19 2 26-4.6l144-136z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" href="./Cart"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-cart3"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                  /></svg
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Header/Navigation -->
+
+    <!-- Start Hero Section -->
+    <div style="width: 100vw; height: 85vh" class="">
+      <img
+        src="./images/cricket.png"
+        alt="cricket-hero-image"
+        height="100%"
+        width="100%"
+      />
+    </div>
+    <!-- End Hero Section -->
+    <div style="width: 100%; padding: 2em 0" class="title">
+      <h1 style="font-size: 4rem; font-weight: 900; text-align: center">
+        Products
+      </h1>
+      <hr />
+    </div>
+    <div class="untree_co-section product-section before-footer-section">
+        <div style="width: 100%; margin-inline: auto;" class="row" >
+          <!-- card -->
+          <div class="card-div" id="product">
+            
+          </div>
+        </div>
+      
+    </div>
+
+    <!-- Start Footer Section -->
+    <footer
+      style="padding-top: 3em; padding-bottom: 0; font-family: poppins"
+      class="footer-section"
+    >
+      <div class="container relative">
+        <div class="sofa-img">
+          <img src="images/imagefooter.png" class="img-fluid" alt="" />
+        </div>
+
+        <div class="row">
+          <div style="margin-bottom: -4em" class="col-lg-8">
+            <div class="subscription-form">
+              <h3 class="d-flex align-items-center">
+                <span class="me-1" style="padding-inline: 0.25em"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                    width="25"
+                    height="25"
+                  >
+                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path
+                      d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"
+                    /></svg></span
+                ><span>Subscribe to Newsletter</span>
+              </h3>
+
+              <form action="#" class="row g-3">
+                <div class="col-auto">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter your name"
+                  />
+                </div>
+                <div class="col-auto">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Enter your email"
+                  />
+                </div>
+                <div class="col-auto">
+                  <button class="btn btn-primary">
+                    <span class="fa fa-paper-plane"></span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <hr style="width: 1005" />
+        <div style="padding-top: 0" class="row g-5">
+          <div class="col-lg-4">
+            <div class="mb-4 footer-logo-wrap">
+              <a href="#" style="font-weight: 900" class="footer-logo"
+                ><span style="padding-inline: 0.25em"
+                  ><svg
+                    id="changeColor"
+                    fill="#DC7633"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="30"
+                    zoomAndPan="magnify"
+                    viewBox="0 0 375 374.9999"
+                    height="30"
+                    preserveAspectRatio="xMidYMid meet"
+                    version="1.0"
+                  >
+                    <defs>
+                      <path
+                        id="pathAttribute"
+                        d="M 8.238281 8.238281 L 366.738281 8.238281 L 366.738281 366.738281 L 8.238281 366.738281 Z M 8.238281 8.238281 "
+                        fill="orange"
+                      ></path>
+                    </defs>
+                    <g>
+                      <path
+                        id="pathAttribute"
+                        d="M 187.488281 8.238281 L 204.875 22.945312 L 224.960938 12.152344 L 238.894531 30.136719 L 260.796875 23.734375 L 270.664062 44.203125 L 293.425781 42.46875 L 298.800781 64.535156 L 321.429688 67.542969 L 322.074219 90.238281 L 343.578125 97.863281 L 339.464844 120.191406 L 358.902344 132.09375 L 350.210938 153.085938 L 366.738281 168.75 L 353.84375 187.488281 L 366.738281 206.222656 L 350.210938 221.886719 L 358.902344 242.878906 L 339.464844 254.78125 L 343.578125 277.113281 L 322.074219 284.734375 L 321.429688 307.429688 L 298.800781 310.4375 L 293.425781 332.503906 L 270.664062 330.769531 L 260.796875 351.238281 L 238.894531 344.835938 L 224.960938 362.820312 L 204.875 352.027344 L 187.488281 366.738281 L 170.097656 352.027344 L 150.011719 362.820312 L 136.078125 344.835938 L 114.175781 351.238281 L 104.308594 330.769531 L 81.546875 332.503906 L 76.171875 310.4375 L 53.542969 307.429688 L 52.898438 284.734375 L 31.394531 277.113281 L 35.511719 254.78125 L 16.070312 242.878906 L 24.761719 221.886719 L 8.238281 206.222656 L 21.128906 187.488281 L 8.238281 168.75 L 24.761719 153.085938 L 16.070312 132.09375 L 35.511719 120.191406 L 31.394531 97.863281 L 52.898438 90.238281 L 53.542969 67.542969 L 76.171875 64.535156 L 81.546875 42.46875 L 104.308594 44.203125 L 114.175781 23.734375 L 136.078125 30.136719 L 150.011719 12.152344 L 170.097656 22.945312 L 187.488281 8.238281 "
+                        fill-opacity="1"
+                        fill-rule="nonzero"
+                        fill="orange"
+                      ></path>
+                    </g>
+                    <g id="inner-icon" transform="translate(85, 75)">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-clubs"
+                        width="199.8"
+                        height="199.8"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        id="IconChangeColor"
+                      >
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                          id="mainIconPathAttribute"
+                        ></path>
+                        <path
+                          d="M12 3a4 4 0 0 1 3.164 6.447a4 4 0 1 1 -1.164 6.198v1.355l1 4h-6l1 -4l.001 -1.355a4 4 0 1 1 -1.164 -6.199a4 4 0 0 1 3.163 -6.446z"
+                          id="mainIconPathAttribute"
+                        ></path>
+                      </svg>
+                    </g></svg></span
+                >Sportz<span>.</span></a
+              >
+            </div>
+            <p class="mb-4">
+              Online platform that specializes in selling sports-related
+              products such as athletic clothing, shoes, equipment, and
+              accessories. Customers can browse and purchase products on the
+            </p>
+
+            <ul class="list-unstyled custom-social">
+              <li>
+                <a href="#"><span class="fa fa-brands fa-facebook-f"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="fa fa-brands fa-twitter"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="fa fa-brands fa-instagram"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="fa fa-brands fa-linkedin"></span></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="row links-wrap">
+              <div class="col-6 col-sm-6 col-md-4 justify-content-center">
+                <ul class="list-unstyled">
+                  <li><a href="#">Report</a></li>
+                  <li><a href="./Shop">shop</a></li>
+                  <li><a href="#">Features</a></li>
+                  <li><a href="#">Contact us</a></li></ul>
+              </div>
+
+              <div class="col-6 col-sm-6 col-md-4 justify-content-center">
+                <ul class="list-unstyled">
+                  <li><a href="#">Support</a></li>
+                  <li><a href="#">Knowledge base</a></li>
+                  <li><a href="#">Live chat</a></li>
+                </ul>
+              </div>
+
+              <div class="col-6 col-sm-6 col-md-4 justify-content-center">
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 576 512"
+                        width="18"
+                        height="18"
+                      >
+                        <path
+                          d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"
+                        /></svg
+                      >&nbsp;&nbsp;Techmology campus</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                        width="18"
+                        height="18"
+                      >
+                        <path
+                          d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"
+                        /></svg
+                      >&nbsp;&nbsp;sportz@tutonota.com</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                        width="18"
+                        height="18"
+                      >
+                        <path
+                          d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"
+                        /></svg
+                      >&nbsp;&nbsp;+91 544-856-986</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                        width="18"
+                        height="18"
+                      >
+                        <path
+                          d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zM432 248a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"
+                        /></svg></a
+                    >&nbsp;&nbsp;+91 659-892-952
+                  </li>
+                </ul>
+              </div>
+
+              <!-- <div class="col-6 col-sm-6 col-md-3">
+							<ul class="list-unstyled">
+								<li><a href="#">Nordic Chair</a></li>
+								<li><a href="#">Kruzo Aero</a></li>
+								<li><a href="#">Ergonomic Chair</a></li>
+							</ul>
+						</div> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="border-top copyright">
+          <div class="row pt-4">
+            <div class="col-lg-6">
+              <p class="mb-2 text-center text-lg-start">
+                Copyright &copy;
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                | Sportz. All Rights Reserved. &mdash;
+                <!-- License information: https://untree.co/license/ -->
+              </p>
+            </div>
+
+            <div class="col-lg-6 text-center text-lg-end">
+              <ul class="list-unstyled d-inline-flex ms-auto">
+                <li class="me-4"><a href="#">Terms &amp; Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer Section -->
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/tiny-slider.js"></script>
+    <script src="./js/custom.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/userIcon.js"></script>
+
+    <script type="text/javascript">
+      const getData = async () => {
+        const {
+          data: { products },
+        } = await axios.post("http://localhost:8080/sportz/Cricket");
+
+        let items = "";
+        console.log(products[0], products[1]);
+
+        products &&
+          products.map((item) => {
+            // item.description.slice(0,40);
+            items += `  
+            <div class="card"><span class="card__price" >₹${item.product_price}</span>
+              <div class="img"><img
+                class="card__image"
+                src="${item.product_image}"
+              /></div>
+              
+              <h1 class="card__title">${item.product_name}</h1>
+            
+             <div class="ratings">
+              <div class="hr"></div>
+              <p>&star;&star;&star;&star;&star;</p>
+             </div>
+              <p>
+                ${item.product_description}
+              </p>
+              <div class="btns">
+                <p  class="card__btn btn" id="${item.product_id}" onClick="add(${item.product_id})" >Buy Now</p>
+                <p  class="wishlist__btn btn" id="${item.product_id}" onClick="addWishlist(${item.product_id})">WISHLIST</p>
+      
+              </div>
+            </div>`;
+          });
+        document.getElementById("product").innerHTML = items;
+      };
+
+      getData();
+
+      const add = (a) => {
+        axios.post(`http://localhost:8080/sportz/AddToCart?id=${a}`);
+        alert("Item added to Cart");
+      };
+
+      const addWishlist = (a) => {
+        axios.post(`http://localhost:8080/sportz/AddToWishlist?id=${a}`);
+        alert("Item added to Wishlist");
+      };
+    </script>
+  </body>
+</html>

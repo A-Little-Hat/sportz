@@ -1,0 +1,214 @@
+html {
+  line-height: 1.15;
+  scroll-behavior: smooth;
+  user-select: none;
+}
+:root {
+  --color--light: #a1a1a1;
+  --color--primary: #1e1d1c;
+  --color--origin: #fff;
+  --stroke--color: #eaeaea;
+  --font-primary: "Poppins";
+  --font-secondary: "Rye";
+  --font-heading: "Rozha One";
+}
+body {
+  font-family: var(--font-primary);
+  min-height: 100vh;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  letter-spacing: 2px;
+  line-height: 2rem;
+}
+
+.signupsection {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  overflow: hidden;
+}
+.leftdiv {
+  background: var(--color--primary);
+  display: grid;
+  grid-template-rows: min-content min-content 1fr;
+  padding-block-start: 1.5rem;
+  padding-inline: 1.7rem;
+  overflow: hidden;
+}
+
+.text {
+  color: var(--color--origin);
+  font-family: var(--font-secondary);
+  font-size: 1.5rem;
+  padding-block-start: 1em;
+  padding-block-end: 1em;
+  padding-inline-end: 0.5em;
+  /* overflow: hidden; */
+}
+
+.quote .champions {
+  font-size: 2rem;
+}
+.rightdiv {
+  padding-block-start: 1.5rem;
+  padding-inline: 1.7rem;
+  background: var(--color--origin);
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  /* font-family: var(--font-primary); */
+}
+.languagesetting {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.languagesetting span {
+  color: var(--color--light);
+  font-size: 0.8rem;
+  padding-inline: 0.3em;
+}
+
+.languagesetting svg {
+  margin-inline-end: 0.5em;
+  width: 0.8rem;
+}
+
+.middle-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle-content-container {
+  display: grid;
+  grid-template-rows: repeat(8, min-content);
+  gap: 1rem;
+}
+
+.text08 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  line-height: normal;
+}
+
+.external-login {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.external-login span {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color--light);
+}
+
+.signingoogle,
+.signinfacebook {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  padding-inline: 0.3rem;
+  padding-block: 1rem;
+  height: 3rem;
+  min-width: 12rem;
+  border-radius: 10px;
+  border: 1px solid var(--stroke--color);
+  transition: all 0.1s ease;
+}
+
+.signingoogle:hover{
+  border: 1px solid #a1a1a185;
+}
+.signinfacebook:hover{
+  border: 1px solid #a1a1a185;
+}
+.text10 {
+  margin-block-end: -1em;
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--color--light);
+}
+
+.usernameinput input,
+.passwordinput input {
+  width: 100%;
+  border-bottom: 1px solid var(--stroke--color);
+  transition: border-bottom 0.1s ease-in-out;
+}
+.usernameinput input:hover{
+  border-bottom: 1px solid #a1a1a185;
+  
+}
+.passwordinput input:hover{
+  border-bottom: 1px solid #a1a1a185;
+  
+}
+
+.passwordinput {
+  position: relative;
+}
+.passwordinput > svg {
+  width: 2em;
+  height: 2em;
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  padding-block: 0.5em;
+  color: var(--color--primary);
+}
+.usernameinput input {
+  margin-block-end: 0.5em;
+}
+.usernameinput input::placeholder,
+.passwordinput input::placeholder {
+  font-size: 0.95rem;
+}
+.text18 > span {
+  color: var(--color--light);
+  font-size: small;
+}
+.loginbutton,
+.text12 {
+  display: flex;
+}
+
+.rememberme{
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.text12 > span{
+  font-size: small;
+  margin-block-start: -0.5em;
+  margin-inline: auto;
+  color: var(--color--light);
+}
+.loginbutton button {
+  background-color: var(--color--primary);
+  color: var(--color--origin);
+  width: 28em;
+  margin-inline: auto;
+  font-family: var(--font-secondary);
+  padding-block: 0.3rem;
+  padding-inline: 2.5rem;
+  border-radius: 0.3rem;
+  transition: all 200ms ease-in-out;
+}
+.text12-reset {
+  color: var(--color--primary);
+}
+.loginbutton button:hover {
+  background: #000;
+}

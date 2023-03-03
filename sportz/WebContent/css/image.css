@@ -1,0 +1,79 @@
+.hover-image:hover{
+    transform: scale(1.2);
+    opacity: 0.5;
+    
+}
+.hover-image{
+    transition: all 0.3s ease-in-out;
+}
+/* .visi{
+    opacity: 0;
+} */
+.hide {
+    display: none;
+  }
+  
+ /* .hide:hover {
+    display: block;
+    color: red;
+  } */
+.myDIV:hover>.hide{
+    display: block;
+    text-align: center;
+    color: rgb(48, 77, 88);
+    font-size: 40px;
+    opacity: 0.8;
+    /* opacity: 0.5; */
+    z-index: 100;
+    /* position: relative; */
+}
+.badminton{
+    width: 550px;
+    height: 350px;
+}
+.deal{
+    color: rgb(48, 77, 88);
+    background-color: orange;
+    /* font-size: 20px; */
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 5px;
+    /* margin: 10px; */
+    width: 100px;
+    text-align: center;
+
+}
+.ratings i{
+    
+    color:#cecece;
+    /* font-size:32px; */
+}
+
+.rating-color{
+    color:#fbc634 !important;
+}
+
+.review-count{
+    font-weight:400;
+    margin-bottom:2px;
+    font-size:14px !important;
+}
+
+.small-ratings i{
+  color:#cecece;   
+}
+.search{
+    background-color: white;
+    border-radius: 15px;
+    margin-bottom: 3%;
+    border: 1px solid #cecece;
+}
+.input-search{
+    border: none;
+    width: 90%;
+    padding: 10px;
+    /* font-size: 16px; */
+}
+.input-search:focus{
+    outline: none;
+}

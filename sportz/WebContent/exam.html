@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam</title>
+</head>
+<body>
+    <form action="/Register" method="post">
+        <form action="Register" id="myForm" method="post" class="middle-content form">
+            <div class="middle-content-container">
+              <span class="text08">Create Account</span>
+
+                <div class="full-name-input">
+                  <input type="text" name="Name" placeholder="Name" class="Name input-hover" required id="name" />
+                </div>
+  
+              <div class="email-input">
+                <input type="text" name="email" placeholder="Email" class="email input-hover" required id="email" />
+              </div>
+  
+              <div class="password-input">
+                <input autocomplete="new-password" type="password" name="password" placeholder="Password"
+                  class="password input-hover" required id="password" />
+              </div>
+
+              <div class="password-input">
+                <input autocomplete="false" type="password" name="confirmPassword" placeholder="Password"
+                  class="password input-hover" required id="confirmPassword" />
+              </div>
+
+              <div class="loginbutton">
+                <button id="registerBtn" class="frame1">Sign up</button>
+              </div>
+    </form>
+    <script>
+        const ValidateEmail = (mail) => {
+          if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+            return (true)
+          }
+          return (false)
+        }
+        const validatePassword = () => {
+          let p = document.getElementById('password').value;
+          let p2 = document.getElementById('confirmPassword').value;
+          let errors = [];
+          if (p.length < 6) {
+            errors.push("Your password must be at least 6 characters");
+          }
+          if (p.length > 12) {
+            errors.push("Your password must less than 12 characters");
+          }
+          if (p.search(/[a-z]/i) < 0) {
+            errors.push("Your password must contain at least one letter.");
+          }
+          if (p.search(/[0-9]/) < 0) {
+            errors.push("Your password must contain at least one digit.");
+          }
+          if (p !== p2) {
+            errors.push("confirm password does not match. ");
+          }
+          if (errors.length > 0) {
+            alert(errors.join("\n"));
+            return false;
+          }
+          return true;
+        }
+        document.getElementById("registerBtn").addEventListener("click", (e) => {
+          e.preventDefault();
+          let email = document.getElementById("email").value
+          if (ValidateEmail(email)) {
+            if(validatePassword()){
+              document.getElementById("myForm").submit();
+            alert("done")
+            }
+          } else {
+            alert("You have entered an invalid email address!")
+          }
+        })
+    
+      </script>
+</body>
+</html>

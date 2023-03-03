@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/order.css">
+  <link rel="stylesheet" href="./css/nav.css">
+
+  <!-- table -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+    rel="stylesheet" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Montserrat:wght@100;300;400;600;700&family=Poppins:wght@400;600;700&display=swap");
+
+    * {
+      font-family: "Poppins", sans-serif;
+      /* overflow-x: hidden; */
+    }
+
+    table,
+    thead,
+    tr,
+    td {
+      padding-inline: 0.25em;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    table {
+      margin-block: 1em;
+
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 5px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+    }
+
+    .card__btn {
+      margin-inline: 4em;
+      background-color: rgba(207, 9, 44, 0.95);
+      transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 30px 25px -20px rgba(0, 0, 0, 0.15);
+      font-size: 0.8em;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      font-weight: 700;
+    }
+
+    .wish .wishlist {
+      font-family: poppins;
+      width: 100%;
+      border: 1px solid rgba(126, 118, 118, 0.233);
+    }
+
+    .wish .th {
+      border-top: 1ps solid rgba(0, 0, 0, 0.212);
+    }
+
+    .wish .trow>td {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.199);
+      text-align: center;
+    }
+
+    .wish .picon {
+      width: 5rem;
+      aspect-ratio: 1;
+    }
+
+    .wish .img-name {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .wish .desc {
+      max-width: 10rem;
+    }
+
+    thead {
+      background: rgba(34, 28, 28, 0.082);
+    }
+    /* .picon{
+        margin-left: 3em;
+    	padding: 0.8em 0.25em;
+    }
+    .img-name{
+    
+    justify-content: start;
+    gap: 1em;
+    
+    } */
+  </style>
+  <title>Profile</title>
+</head>
+
+<body>
+  <script>
+ 
+  </script>
+
+  <div class="main-content">
+
+    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+      <div class="container">
+        <a class="navbar-brand" href="./"><img src="./images/logo.png" alt="logo" /></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
+          aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsFurni">
+          <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link" href="./">Home</a>
+            </li>
+            <li><a class="nav-link" href="./Shop">Shop</a></li>
+            <li><a class="nav-link" href="./Contact">Contact us</a></li>
+            <li id="profile" class="active"><a class="nav-link" href="./Profile">Profile</a></li>
+          </ul>
+
+          <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+            <li>
+              <a id="register" class="nav-link" href="./Register">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                  viewBox="0 0 448 512">
+
+                  <path
+                    d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
+                </svg>
+              </a>
+              <a id="logout" class="nav-link" href="./Logout">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20"
+                  fill="currentColor">
+
+                  <path
+                    d="M160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96C43 32 0 75 0 128V384c0 53 43 96 96 96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H96c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32h64zM504.5 273.4c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22v72H192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32H320v72c0 9.6 5.7 18.2 14.5 22s19 2 26-4.6l144-136z" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" href="./Cart"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                  fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                  <path
+                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page content -->
+    <div class="container-fluid mt--7">
+      <div class="row">
+        <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+          <div style="min-height: 32rem;" class="card card-profile shadow">
+            <div class="row justify-content-center">
+              <div class="col-lg-3 order-lg-2">
+                <div class="card-profile-image">
+                  <a href="#">
+                    <img id="dp" class="rounded-circle">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+              <div class="d-flex justify-content-between">
+                <a href="#" class="btn btn-sm btn-info mr-4">Connect</a>
+                <a href="#" class="btn btn-sm btn-default float-right">Message</a>
+              </div>
+            </div>
+            <div class="card-body pt-0 pt-md-4">
+              <div class="row">
+                <div class="col">
+                  <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+                    <div>
+                      <span id="totalOrders" class="heading"></span>
+                      <span  class="description">Orders</span>
+                    </div>
+                    <div>
+                      <span id="totalWishlist" class="heading"></span>
+                      <span class="description">Wishlist</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <h3 id="UserName">
+                  Jessica Jones
+                </h3>
+                <div class="h5 font-weight-300">
+                  <i class="ni location_pin mr-2"></i>India, Kolkata
+                </div>
+
+                <div>
+                  <svg id="changeColor" fill="#DC7633" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" width="20" zoomAndPan="magnify"
+                    viewBox="0 0 375 374.9999" height="20" preserveAspectRatio="xMidYMid meet" version="1.0">
+                    <defs>&lt;<path id="pathAttribute"
+                        d="M 77 246 L 344 246 L 344 354.949219 L 77 354.949219 Z M 77 246"></path>
+                      <path id="pathAttribute" d="M 21 147 L 354.949219 147 L 354.949219 306 L 21 306 Z M 21 147 ">
+                      </path>
+                      <path id="pathAttribute" d="M 25 13.699219 L 292 13.699219 L 292 123 L 25 123 Z M 25 13.699219 ">
+                      </path>
+                      <path id="pathAttribute" d="M 13.699219 63 L 348 63 L 348 221 L 13.699219 221 Z M 13.699219 63 ">
+                      </path>
+                    </defs>
+                    <g>
+                      <path id="pathAttribute"
+                        d="M 343.425781 246.175781 L 77.542969 317.421875 C 106.78125 340.914062 143.914062 354.980469 184.34375 354.980469 C 256.773438 354.980469 318.65625 309.851562 343.425781 246.175781 Z M 343.425781 246.175781 "
+                        fill-opacity="1" fill-rule="nonzero"></path>
+                    </g>
+                    <g>
+                      <path id="pathAttribute"
+                        d="M 351.03125 147.730469 L 21.664062 235.984375 C 30.023438 262.34375 44.609375 285.9375 63.699219 305.019531 L 349.195312 228.523438 C 352.960938 214.429688 354.984375 199.621094 354.984375 184.34375 C 354.984375 171.773438 353.613281 159.527344 351.03125 147.730469 Z M 351.03125 147.730469 "
+                        fill-opacity="1" fill-rule="nonzero"></path>
+                    </g>
+                    <g clip-path="url(#id3)">
+                      <path id="pathAttribute"
+                        d="M 25.257812 122.507812 L 291.140625 51.261719 C 261.902344 27.769531 224.769531 13.699219 184.339844 13.699219 C 111.910156 13.699219 50.027344 58.832031 25.257812 122.507812 Z M 25.257812 122.507812 "
+                        fill-opacity="1" fill-rule="nonzero"></path>
+                    </g>
+                    <g clip-path="url(#id4)">
+                      <path id="pathAttribute"
+                        d="M 304.984375 63.664062 L 19.488281 140.160156 C 15.722656 154.253906 13.699219 169.0625 13.699219 184.339844 C 13.699219 196.910156 15.070312 209.15625 17.652344 220.953125 L 347.019531 132.699219 C 338.65625 106.335938 324.074219 82.746094 304.984375 63.664062 Z M 304.984375 63.664062 "
+                        fill-opacity="1" fill-rule="nonzero"></path>
+                    </g>
+                    <g id="inner-icon" transform="translate(85, 75)"> 
+                      <svg xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" width="199.8" zoomAndPan="magnify"
+                        viewBox="0 0 30 30.000001" height="199.8" preserveAspectRatio="xMidYMid meet" version="1.0"
+                        id="IconChangeColor">
+                        <defs>
+                          <clipPath id="id1">
+                            <path
+                              d="M 2.328125 4.222656 L 27.734375 4.222656 L 27.734375 24.542969 L 2.328125 24.542969 Z M 2.328125 4.222656 "
+                              clip-rule="nonzero" id="mainIconPathAttribute"></path>
+                          </clipPath>
+                        </defs>
+                        <g clip-path="url(#id1)">
+                          <path fill="rgb(13.729858%, 12.159729%, 12.548828%)"
+                            d="M 27.5 7.53125 L 24.464844 4.542969 C 24.15625 4.238281 23.65625 4.238281 23.347656 4.542969 L 11.035156 16.667969 L 6.824219 12.523438 C 6.527344 12.230469 6 12.230469 5.703125 12.523438 L 2.640625 15.539062 C 2.332031 15.84375 2.332031 16.335938 2.640625 16.640625 L 10.445312 24.324219 C 10.59375 24.472656 10.796875 24.554688 11.007812 24.554688 C 11.214844 24.554688 11.417969 24.472656 11.566406 24.324219 L 27.5 8.632812 C 27.648438 8.488281 27.734375 8.289062 27.734375 8.082031 C 27.734375 7.875 27.648438 7.679688 27.5 7.53125 Z M 27.5 7.53125 "
+                            fill-opacity="1" fill-rule="nonzero" id="mainIconPathAttribute"></path>
+                        </g>
+                      </svg> 
+                    </g>
+                  </svg>&nbsp;Verified sportz user.
+                </div>
+                <hr class="my-4">
+                <p>“The only way to prove that you’re a good sport is to lose.” – Ernie Banks.</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-8 order-xl-1">
+          <div style="min-height: max-content;" class="card bg-secondary shadow">
+            <div class="card-header bg-white border-0">
+              <div class="row align-items-center">
+                <div class="col-8">
+                  <h3 class="mb-0">My account</h3>
+                </div>
+                <div class="col-4 text-right">
+                  <a href="#!" class="btn btn-sm btn-primary">Settings</a>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <form>
+                <h6 class="heading-small text-muted mb-4">User information</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group focused">
+                        <label class="form-control-label" for="input-email">Email</label>
+                        <p type="text" id="input-email" class="form-control form-control-alternative"
+                          placeholder="Username" value="lucky.jesse"></p>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-phone">Phone </label>
+                        <p type="email" id="input-phone" class="form-control form-control-alternative"
+                          placeholder="jesse@example.com"></p>
+                      </div>
+                    </div>
+
+                  </div>
+                  <hr class="my-4">
+                  <!-- Address -->
+                  <h6 class="heading-small text-muted mb-4">Contact information</h6>
+                  <div class="pl-lg-4">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group focused">
+                          <label class="form-control-label" for="input-address">Address</label>
+                          <p id="input-address" class="form-control form-control-alternative"
+                            placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
+                            type="text"></p>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <div class="row">
+                      <div class="col-lg-4">
+                        <div class="form-group focused">
+                          <label class="form-control-label" for="input-city">City</label>
+                          <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" value="New York">
+                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="form-group focused">
+                          <label class="form-control-label" for="input-country">Country</label>
+                          <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="Country" value="United States">
+                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="form-group">
+                          <label class="form-control-label" for="input-country">Postal code</label>
+                          <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code">
+                        </div>
+                      </div>
+                    </div> -->
+                  </div>
+                  <div class="buttons">
+                    <button id="orderBtn" class="card__btn btn">Orders</button>
+
+                    <button id="wishlistBtn" class="card__btn btn">WISHLIST</button>
+                  </div>
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div>
+
+      <div class="wish" id="wishlistTable">
+        <table class="wishlist">
+          <thead style="background: rgba(34, 28, 28, 0.082);">
+            <tr class="th">
+              <th class="font-weight-bold py-2 border-0">Name</th>
+              <th class="font-weight-bold py-2 border-0">Description</th>
+              <th class="font-weight-bold py-2 border-0">Status</th>
+              <th class="font-weight-bold py-2 border-0">Price</th>
+              <th class="font-weight-bold py-2 border-0">Add</th>
+              <th class="font-weight-bold py-2 border-0">Remove</th>
+            </tr>
+          </thead>
+          <tbody id="wish">
+            <tr class="trow">
+              <td class="img-name"><img class="picon"
+                  src="https://img.freepik.com/free-vector/vector-isolated-realistic-soccer-ball-white_1284-41932.jpg?size=338&ext=jpg&uid=R88162214&ga=GA1.2.1313434403.1653723958&semt=sph"
+                  alt="">Brazuka</td>
+              <td class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, quis.</td>
+              <td>Available</td>
+              <td>50000/-</td>
+              <td id="add"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6.01 16.136L4.141 4H3a1 1 0 0 1 0-2h1.985a.993.993 0 0 1 .66.235.997.997 0 0 1 .346.627L6.319 5H14v2H6.627l1.23 8h9.399l1.5-5h2.088l-1.886 6.287A1 1 0 0 1 18 17H7.016a.993.993 0 0 1-.675-.248.998.998 0 0 1-.332-.616zM10 20a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm9 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm0-18a1 1 0 0 1 1 1v1h1a1 1 0 1 1 0 2h-1v1a1 1 0 1 1-2 0V6h-1a1 1 0 1 1 0-2h1V3a1 1 0 0 1 1-1z"
+                    fill="#0D0D0D" />
+                </svg></td>
+              <td id="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-trash" viewBox="0 0 16 16">
+                  <path
+                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                  <path fill-rule="evenodd"
+                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                </svg></td>
+            </tr>
+            <tr class="trow">
+              <td class="img-name"><img class="picon"
+                  src="https://img.freepik.com/free-vector/vector-isolated-realistic-soccer-ball-white_1284-41932.jpg?size=338&ext=jpg&uid=R88162214&ga=GA1.2.1313434403.1653723958&semt=sph"
+                  alt="">Brazuka</td>
+              <td class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, quis.</td>
+              <td>Available</td>
+              <td>50000/-</td>
+              <td id="add"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6.01 16.136L4.141 4H3a1 1 0 0 1 0-2h1.985a.993.993 0 0 1 .66.235.997.997 0 0 1 .346.627L6.319 5H14v2H6.627l1.23 8h9.399l1.5-5h2.088l-1.886 6.287A1 1 0 0 1 18 17H7.016a.993.993 0 0 1-.675-.248.998.998 0 0 1-.332-.616zM10 20a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm9 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm0-18a1 1 0 0 1 1 1v1h1a1 1 0 1 1 0 2h-1v1a1 1 0 1 1-2 0V6h-1a1 1 0 1 1 0-2h1V3a1 1 0 0 1 1-1z"
+                    fill="#0D0D0D" />
+                </svg></td>
+              <td id="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-trash" viewBox="0 0 16 16">
+                  <path
+                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                  <path fill-rule="evenodd"
+                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                </svg></td>
+            </tr>
+            <tr class="trow">
+              <td class="img-name"><img class="picon"
+                  src="https://img.freepik.com/free-vector/vector-isolated-realistic-soccer-ball-white_1284-41932.jpg?size=338&ext=jpg&uid=R88162214&ga=GA1.2.1313434403.1653723958&semt=sph"
+                  alt="">Brazuka</td>
+              <td class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, quis.</td>
+              <td>Available</td>
+              <td>50000/-</td>
+              <td id="add"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6.01 16.136L4.141 4H3a1 1 0 0 1 0-2h1.985a.993.993 0 0 1 .66.235.997.997 0 0 1 .346.627L6.319 5H14v2H6.627l1.23 8h9.399l1.5-5h2.088l-1.886 6.287A1 1 0 0 1 18 17H7.016a.993.993 0 0 1-.675-.248.998.998 0 0 1-.332-.616zM10 20a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm9 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm0-18a1 1 0 0 1 1 1v1h1a1 1 0 1 1 0 2h-1v1a1 1 0 1 1-2 0V6h-1a1 1 0 1 1 0-2h1V3a1 1 0 0 1 1-1z"
+                    fill="#0D0D0D" />
+                </svg></td>
+              <td id="delete">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                  <path fill-rule="evenodd"
+                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                </svg>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+      <div style="overflow-x: hidden;" id="order-table" class="table-responsive pb-5">
+        <table class="table border ps-table w-100 mb-3">
+          <thead>
+            <tr>
+              <th class="font-weight-bold py-2 border-0">Order ID</th>
+              <th class="font-weight-bold py-2 border-0 quantity">Address</th>
+              <th class="font-weight-bold py-2 border-0">phone</th>
+              <th class="font-weight-bold py-2 border-0">Total</th>
+              <th class="font-weight-bold py-2 border-0">Status</th>
+              <th class="font-weight-bold py-2 border-0">Pincode </th>
+              <th class="font-weight-bold py-2 border-0">products</th>
+            </tr>
+          </thead>
+          <tbody id = "orederTableData">
+            <!-- <tr class="trow">
+              <td ></td>
+              <td ></td>
+              <td></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="border-top copyright">
+      <div class="row pt-4">
+        <div class="col-lg-6">
+          <p class="mb-2 text-center text-lg-start">
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            | Sportz. All Rights Reserved. &mdash;
+          </p>
+        </div>
+
+        <div class="col-lg-6 text-center text-lg-end">
+          <ul class="list-unstyled d-inline-flex ms-auto">
+            <li class="me-4"><a href="#">Terms &amp; Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="./js/userDashboard.js"></script>
+  <script src="./js/userIcon.js"></script>
+  <script src="./js/getUserEmailAndSetDP.js"></script>
+  
+</body>
+
+</html>

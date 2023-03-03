@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="english">
+
+<head>
+  <title>sign up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta property="Sportz" content="summary_large_image" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Montserrat:wght@100;300;400;600;700&family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rye:wght@400&amp;display=swap"
+    data-tag="font" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    data-tag="font" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rozha+One:wght@400&amp;display=swap"
+    data-tag="font" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+    data-tag="font" />
+  <link href="./css/sign-up.css" rel="stylesheet" />
+  <!-- <script src="./src/register.js" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script> -->
+</head>
+
+<body>
+
+  <section>
+    <div class="signupsection">
+      <div class="leftdiv">
+        <a href="./" class="logo">
+          <img alt="logo66" src="./images/logo.png" class="logo" />
+        </a>
+        <span class="text">
+          <span class="quote"><span class="champions">Victory</span> is in having done your best.</span>
+        </span>
+        <div class="man-thing">
+          <img alt="image235" src="./images/player-img-sign-up.png" class="image" />
+        </div>
+      </div>
+      <div class="rightdiv">
+
+        <form action="Register" id="myForm" method="post" class="middle-content form">
+          <!-- heading -->
+          <div class="middle-content-container">
+            <span class="text08">Create Account</span>
+
+
+
+            <!-- username input -->
+            <div class="name-phone">
+              <div class="full-name-input">
+                <!-- <div type="text" class="text14">Username</div> -->
+                <input type="text" name="Name" placeholder="Name" class="Name input-hover" required id="name" />
+              </div>
+              <div class="phone">
+                <!-- <div type="text" class="text14">Username</div> -->
+                <input type="tel" name="phone" placeholder="phone" class="phone input-hover" required id="phone" />
+              </div>
+            </div>
+
+            <div class="email-input">
+              <!-- <div type="text" class="text14">Username</div> -->
+              <input type="text" name="email" placeholder="Email" class="email input-hover" required id="email" />
+            </div>
+            <!-- address input -->
+            <div class="address-input">
+              <!-- <div type="text" class="text14">Username</div> -->
+              <input type="text" name="address" placeholder="Address" class="Address input-hover" required
+                id="address" />
+            </div>
+
+            <!-- password input -->
+            <div class="password-input">
+              <!-- <div class="text16">Password</div> -->
+              <input autocomplete="new-password" type="password" name="password" placeholder="Password"
+                class="password input-hover" required id="password" />
+              <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16"> <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z"/> <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829z"/> <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z"/> </svg> -->
+            </div>
+            <!-- login button -->
+            <div class="loginbutton">
+              <button id="registerBtn" class="frame1">Sign up</button>
+            </div>
+
+            <!-- password reset -->
+            <div class="text12">
+              <span>Already have an account? <a href="./SignIn"><span class="text12-reset">Sign
+                    in</span></a></span>
+            </div>
+          </div>
+      </div>
+    </div>
+    </form>
+  </section>
+  <script>
+    const ValidateEmail = (mail) => {
+      // function ValidateEmail(mail){
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+        return (true)
+      }
+      return (false)
+    }
+    const validatePassword = () => {
+      var p = document.getElementById('password').value,
+        errors = [];
+      if (p.length < 6) {
+        errors.push("Your password must be at least 6 characters");
+      }
+      if (p.length > 12) {
+        errors.push("Your password must less than 12 characters");
+      }
+      if (p.search(/[a-z]/i) < 0) {
+        errors.push("Your password must contain at least one letter.");
+      }
+      if (p.search(/[0-9]/) < 0) {
+        errors.push("Your password must contain at least one digit.");
+      }
+      if (errors.length > 0) {
+        alert(errors.join("\n"));
+        return false;
+      }
+      return true;
+    }
+    document.getElementById("registerBtn").addEventListener("click", (e) => {
+      e.preventDefault();
+      let email = document.getElementById("email").value
+      if (ValidateEmail(email)) {
+        if(validatePassword()){
+          document.getElementById("myForm").submit();
+        }
+      } else {
+        alert("You have entered an invalid email address!")
+      }
+    })
+
+  </script>
+</body>
+
+</html>
